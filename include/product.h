@@ -6,6 +6,7 @@
 
 enum class ProductStatus { IN_STOCK, LOW_STOCK, OUT_OF_STOCK };
 
+
 struct Product {
     int id;
     std::string name;
@@ -14,6 +15,15 @@ struct Product {
     int quantity;
     ProductStatus status;
 };
+void addProduct(const Product& p);
+
+
+bool editProduct(int id, const Product& updated);
+
+Product* searchProduct(int id);
+
+
+Product* searchProduct(const std::string& name);
 
 // Delete a product by ID
 bool deleteProduct(int productId, std::vector<Product>& products);

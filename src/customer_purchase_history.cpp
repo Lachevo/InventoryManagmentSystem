@@ -11,6 +11,34 @@ void Sale::calculateTotalPrice() {
         totalPrice += item.quantitySold * item.priceAtSale;
     }
 }
+void addCustomer(const Customer& customer) {
+    customers.push_back(customer);
+    std::cout << "Customer added successfully.\n";
+}
+
+void listCustomers() {
+    for (const auto& c : customers) {
+        std::cout << "ID: " << c.id << ", Name: " << c.name
+            << ", Contact: " << c.contact << "\n";
+    }
+}
+void addCustomer(const Customer& customer) {
+    customers.push_back(customer);
+    std::cout << "Customer added successfully.\n";
+}
+
+bool editCustomer(int id, const Customer& updated) {
+    for (auto& customer : customers) {
+        if (customer.id == id) {
+            customer = updated;
+            std::cout << "Customer updated successfully.\n";
+            return true;
+        }
+    }
+    std::cerr << "Customer not found!\n";
+    return false;
+}
+
 
 void viewCustomerPurchaseHistory(int customerId,
                                  const std::vector<Customer>& customers,

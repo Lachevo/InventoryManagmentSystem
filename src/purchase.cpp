@@ -9,6 +9,10 @@ bool editPurchaseOrder(int orderId, const PurchaseOrder& updatedOrder, std::vect
     }
     return false;
 }
+void processPurchaseOrder(const PurchaseOrder& order) {
+    purchaseOrders.push_back(order);
+    std::cout << "Purchase order processed successfully.\n";
+}
 
 bool deletePurchaseOrder(int orderId, std::vector<PurchaseOrder>& orders) {
     for (auto it = orders.begin(); it != orders.end(); ++it) {

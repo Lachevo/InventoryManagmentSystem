@@ -11,6 +11,10 @@ enum class ProductStatus {
     UNKNOWN
 };
 
+void addCustomer(const Customer& customer);
+
+void listCustomers();
+
 struct Product {
     int id;
     std::string name;
@@ -62,5 +66,9 @@ void viewCustomerPurchaseHistory(int customerId,
                                  const std::vector<Customer>& customers,
                                  const std::vector<Sale>& allSales,
                                  const std::vector<Product>& allProducts);
+                                 void addCustomer(const Customer& customer);
+
+// Edit existing customer by ID
+bool editCustomer(int id, const Customer& updated);
 
 #endif // CUSTOMER_PURCHASE_HISTORY_H

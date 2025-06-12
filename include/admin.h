@@ -12,6 +12,7 @@ struct ActivityLog {
     std::string username;
     std::time_t timestamp;
 };
+bool authenticateAdmin(const std::string& username, const std::string& password);
 
 // Set user role
 void setUserRole(const std::string& username, UserRole role);

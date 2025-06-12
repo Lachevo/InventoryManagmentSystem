@@ -10,7 +10,16 @@ struct Supplier {
     std::string contact;
     std::vector<int> suppliedProductIds;
 };
+// Function to add a supplier
+void addSupplier(const Supplier& supplier);
 
+// Optional: View all suppliers
+void listSuppliers();
+
+// Function declarations
+void addSupplier(const Supplier& supplier);
+bool editSupplier(int id, const Supplier& updated);
+Supplier* searchSupplier(int id);
 // Delete a supplier by ID
 bool deleteSupplier(int supplierId, std::vector<Supplier>& suppliers);
 
