@@ -11,6 +11,8 @@ struct PurchaseOrder {
     std::vector<int> quantities;
     std::string status;
 };
+/ Add a new purchase order
+void processPurchaseOrder(const PurchaseOrder& order);
 
 // Edit a purchase order by ID
 bool editPurchaseOrder(int orderId, const PurchaseOrder& updatedOrder, std::vector<PurchaseOrder>& orders);

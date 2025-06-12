@@ -1,4 +1,34 @@
 #include "product.h"
+void addProduct(const Product& p) {
+    products.push_back(p);
+}
+
+bool editProduct(int id, const Product& updated) {
+    for (auto& p : products) {
+        if (p.id == id) {
+            p = updated;
+            return true;
+        }
+    }
+    std::cerr << "Product not found!\n";
+    return false;
+}
+
+Product* searchProduct(int id) {
+    for (auto& p : products) {
+        if (p.id == id) return &p;
+    }
+    return nullptr;
+}
+
+Product* searchProduct(const std::string& name) {
+    for (auto& p : products) {
+        if (p.name == name) return &p;
+    }
+    return nullptr;
+}
+
+
 
 bool deleteProduct(int productId, std::vector<Product>& products) {
     for (auto it = products.begin(); it != products.end(); ++it) {
